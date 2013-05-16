@@ -4,9 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>VOD DEMO Dashbroad</title>
+    <title>视频实时分享平台管理系统</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-     <link href="css/content.css" rel="stylesheet" type="text/css" />
+    <link href="css/content.css" rel="stylesheet" type="text/css" />
     <script type="text/JavaScript">
         var $ = function (id) {
             return document.getElementById(id);
@@ -62,129 +62,144 @@
         }
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
+
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="header">
-        <div class="header03">
-        </div>
-        <div class="header01">
-        </div>
-        <div class="header02">
-            VOD DEMO Dashbroad</div>
-    </div>
-    <div class="left" id="LeftBox">
-        <div class="left01">
-            <div class="left01_right">
+        <div class="header">
+            <div class="header03">
             </div>
-            <div class="left01_left">
+            <div class="header01">
             </div>
-            <div class="left01_c">
-                <%=userName %>，您好！</div>
+            <div class="header02">
+                视频实时分享平台管理系统
+            </div>
         </div>
-        <div class="left02">
-            <div class="left02top">
-                <div class="left02top_right">
+        <div class="left" id="LeftBox">
+            <div class="left01">
+                <div class="left01_right">
                 </div>
-                <div class="left02top_left">
+                <div class="left01_left">
                 </div>
-                <div class="left02top_c">
-                    用户信息管理</div>
+                <div class="left01_c">
+                    <%=userName %>，您好！
+                </div>
             </div>
-            <div class="left02down">
-                <div class="left02down01">
-                    <div id="Bf080" class="left02down01_img">
+            <div class="left02">
+                <div class="left02top">
+                    <div class="left02top_right">
                     </div>
-                    <a onclick="show_menuB(80)" href="main.aspx">用户信息查询</a></div>
+                    <div class="left02top_left">
+                    </div>
+                    <div class="left02top_c">
+                        用户信息管理
+                    </div>
+                </div>
+                <div class="left02down">
                     <div class="left02down01">
-                    <div id="Div2" class="left02down01_img">
+                        <div id="Bf080" class="left02down01_img">
+                        </div>
+                        <a onclick="show_menuB(80)" href="main.aspx">用户信息查询</a>
                     </div>
-                    <a onclick="show_menuB(80)" href="addUser.aspx">添加新的用户</a></div>
-            </div>
+                    <div class="left02down01">
+                        <div id="Div2" class="left02down01_img">
+                        </div>
+                        <a onclick="show_menuB(80)" href="addUser.aspx">添加新的用户</a>
+                    </div>
+                </div>
 
-        </div>
-        <div class="left02">
-            <div class="left02top">
-                <div class="left02top_right">
+            </div>
+            <div class="left02">
+                <div class="left02top">
+                    <div class="left02top_right">
+                    </div>
+                    <div class="left02top_left">
+                    </div>
+                    <div class="left02top_c">
+                        频道管理
+                    </div>
                 </div>
-                <div class="left02top_left">
+                <div class="left02down">
+                    <div class="left02down01">
+                        <a onclick="show_menuB(82)" href="channel.aspx">
+                            <div id="Bf082" class="left02down01_img">
+                            </div>
+                            频道信息查询</a>
+                    </div>
+                    <div class="left02down01">
+                        <a onclick="show_menuB(82)" href="addChannel.aspx">
+                            <div id="Div1" class="left02down01_img">
+                            </div>
+                            添加新的频道</a>
+                    </div>
+
+
                 </div>
-                <div class="left02top_c">
-                    频道管理</div>
             </div>
-            <div class="left02down">
-                <div class="left02down01">
-                    <a onclick="show_menuB(82)" href="channel.aspx">
-                        <div id="Bf082" class="left02down01_img">
-                        </div>
-                         频道信息查询</a></div>
-                         <div class="left02down01">
-                    <a onclick="show_menuB(82)" href="addChannel.aspx">
-                        <div id="Div1" class="left02down01_img">
-                        </div>
-                         添加新的频道</a></div>
-               
-                
-            </div>
-        </div>
-        <div class="left02">
-            <div class="left02top">
-                <div class="left02top_right">
+            <div class="left02">
+                <div class="left02top">
+                    <div class="left02top_right">
+                    </div>
+                    <div class="left02top_left">
+                    </div>
+                    <div class="left02top_c">
+                        节目管理
+                    </div>
                 </div>
-                <div class="left02top_left">
+                <div class="left02down">
+                    <div class="left02down01">
+                        <a href="Program.aspx">
+                            <div class="left02down01_img">
+                            </div>
+                            节目信息查询</a>
+                    </div>
+                    <div class="left02down01">
+                        <a href="addProgram.aspx">
+                            <div class="left02down01_img">
+                            </div>
+                            添加新的节目</a>
+                    </div>
                 </div>
-                <div class="left02top_c">
-                    节目管理</div>
             </div>
-            <div class="left02down">
-                <div class="left02down01">
-                    <a href="Program.aspx">
-                        <div class="left02down01_img">
-                        </div>
-                        节目信息查询</a></div>
-                <div class="left02down01">
-                    <a href="addProgram.aspx">
-                        <div class="left02down01_img">
-                        </div>
-                        添加新的节目</a></div>
-            </div>
-        </div>
-        <div class="left02">
-            <div class="left02top">
-                <div class="left02top_right">
+            <div class="left02">
+                <div class="left02top">
+                    <div class="left02top_right">
+                    </div>
+                    <div class="left02top_left">
+                    </div>
+                    <div class="left02top_c">
+                        网络管理
+                    </div>
                 </div>
-                <div class="left02top_left">
+                <div class="left02down">
+                    <div class="left02down01">
+                        <a href="flow.aspx">
+                            <div class="left02down01_img">
+                            </div>
+                            流量监控</a>
+                    </div>
+
                 </div>
-                <div class="left02top_c">
-                    网络管理</div>
             </div>
-            <div class="left02down">
-                <div class="left02down01">
-                    <a href="flow.aspx">
-                        <div class="left02down01_img">
-                        </div>
-                        流量监控</a></div>
-                
+            <div class="left01">
+                <div class="left03_right">
+                </div>
+                <div class="left01_left">
+                </div>
+                <div class="left03_c">
+                    <a href="logout.aspx" style="text-decoration: none;">安全退出</a>
+                </div>
             </div>
         </div>
-        <div class="left01">
-            <div class="left03_right">
+        <div class="rrcc" id="RightBox">
+            <div class="center" id="Mobile" onclick="show_menuC()">
             </div>
-            <div class="left01_left">
+            <div class="right" id="li010">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
-            <div class="left03_c"><a href="logout.aspx" style="text-decoration:none;">
-                安全退出</a></div>
         </div>
-    </div>
-    <div class="rrcc" id="RightBox">
-        <div class="center" id="Mobile" onclick="show_menuC()">
-        </div>
-        <div class="right" id="li010">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </div>
     </form>
 </body>
 </html>

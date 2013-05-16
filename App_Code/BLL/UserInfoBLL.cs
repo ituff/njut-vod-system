@@ -20,7 +20,11 @@ public class UserInfoBLL
     {
         userInfoDao userDao = new userInfoDao();
         return userDao.getUsers();
+    }
 
+    public userinfo Select(int userID) {
+        userInfoDao userDao = new userInfoDao();
+        return userDao.getUser(userID);
     }
 
     public bool Delete(string userID) {
@@ -31,6 +35,8 @@ public class UserInfoBLL
     public bool Update(userinfo user)
     {
         userInfoDao userDao = new userInfoDao();
+        encryptcs Encrytcs = new encryptcs();
+        user.Password = Encrytcs.Encrypt(user.Password);
         return userDao.updateUser(user);
     }
 

@@ -17,6 +17,8 @@
             节目描述：<asp:TextBox ID="ProgramDecribeTB" runat="server" Width="350px" MaxLength="500"
                 TextMode="MultiLine"></asp:TextBox></p>
         <p>
+            直播封面：<asp:FileUpload ID="imgFU" runat="server" /></p>
+        <p>
             所属频道：<asp:TextBox ID="ChannelIDTB" runat="server" Width="50px"
                 MaxLength="11" OnKeyPress="if(((event.keyCode>=48)&&(event.keyCode <=57))||(event.keyCode==46)) {event.returnValue=true;} else{event.returnValue=false;}"></asp:TextBox></p>
         <p>
