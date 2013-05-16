@@ -19,6 +19,28 @@ public partial class programinfo
     private int _channelid;
     private DateTime _begintime;
     private DateTime _endtime;
+    private int _classID;
+    private int _userID;
+
+    public int UserID
+    {
+        get { return _userID; }
+        set { _userID = value; }
+    }
+
+
+    public int ClassID
+    {
+        get { return _classID; }
+        set { _classID = value; }
+    }
+    private string _postUrl;
+
+    public string PostUrl
+    {
+        get { return _postUrl; }
+        set { _postUrl = value; }
+    }
 
     public int ProgramID
     {
@@ -61,6 +83,8 @@ public partial class programinfo
         set { _endtime = value; }
         get { return _endtime; }
     }
+
+
     #endregion Model
 }
 

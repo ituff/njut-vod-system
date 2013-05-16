@@ -61,12 +61,12 @@ public partial class main : System.Web.UI.Page
     //更新
     protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
-        userinfo user = new userinfo();
+        UserInfoBLL userbll = new UserInfoBLL();
+        userinfo user = userbll.Select(Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value));
         user.UserID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value);
         user.UserName = ((TextBox)(GridView1.Rows[e.RowIndex].Cells[1].Controls[0])).Text.ToString().Trim();
         user.Email = ((TextBox)(GridView1.Rows[e.RowIndex].Cells[2].Controls[0])).Text.ToString().Trim();
-        user.Type = Convert.ToInt32(((TextBox)(GridView1.Rows[e.RowIndex].Cells[3].Controls[0])).Text.Trim());
-        UserInfoBLL userbll = new UserInfoBLL();
+        user.Type = Convert.ToInt32(((TextBox)(GridView1.Rows[e.RowIndex].Cells[3].Controls[0])).Text.Trim());        
         if (userbll.Update(user)) ShowMessage("javascript", "更新成功！");
         else ShowMessage("javascript", "更新失败！");
         GridView1.EditIndex = -1;

@@ -11,6 +11,6 @@ public partial class logout : System.Web.UI.Page
         Session["status"] = "false";
         Session["UserId"] ="0";
         Session["type"] = "0";
-        Response.Redirect("Default.aspx");
+        Response.Redirect("login.aspx");
     }
 }

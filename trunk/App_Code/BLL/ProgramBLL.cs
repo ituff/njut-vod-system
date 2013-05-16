@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System;
+using System.Collections.Generic;
 
 /// <summary>
 ///ProgramBLL 的摘要说明
@@ -16,8 +17,13 @@ public class ProgramBLL
     public DataSet Select()
     {
         programInfoDao programDao = new programInfoDao();
-        channelInfoDao channelDao = new channelInfoDao();
         return programDao.getPrograms();
+    }
+
+    public DataSet SelectByUserId(int userId)
+    {
+        programInfoDao programDao = new programInfoDao();
+        return programDao.getPrograms(userId);
     }
 
     public programinfo Select(int ProgramID)
@@ -42,6 +48,24 @@ public class ProgramBLL
     {
         programInfoDao programDao = new programInfoDao();
         return programDao.saveProgram(program);
+    }
+
+    public DataSet getPrograms()
+    {
+        programInfoDao programDao = new programInfoDao();
+        return programDao.getPrograms( "ORDER BY ProgramID DESC LIMIT 9");
+    }
+
+    public DataSet getProgramsDESC()
+    {
+        programInfoDao programDao = new programInfoDao();
+        return programDao.getPrograms("ORDER BY ProgramID DESC");
+    }
+
+    public List<programinfo> getProgramList()
+    {
+        programInfoDao programDao = new programInfoDao();
+        return programDao.getProgramList("ORDER BY ProgramID DESC");
     }
 
 }

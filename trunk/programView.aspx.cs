@@ -12,6 +12,7 @@ public partial class programView : System.Web.UI.Page
     {
         authentication();
         id = Convert.ToInt32(Request.QueryString["id"].ToString().Trim());
+        isSwfSupport();
         if (!Page.IsPostBack)
         {
             dataBind();
@@ -26,7 +27,16 @@ public partial class programView : System.Web.UI.Page
 
     public string ProgramUrlStr;
     public string ChannelNameStr;
+    public string swfSupport = "";
 
+    private void isSwfSupport()
+    {
+        string UserBrowser = Request.Browser.Browser;
+        if (UserBrowser.ToLower().Equals("firefox") || UserBrowser.ToLower().Equals("ie"))
+        {
+            swfSupport = "<script type=\"text/javascript\">jwplayer(\"html5player\").setup({autostart:true,flashplayer:\"player.swf\"}); </script>";
+        }
+    }
 
     private void dataBind()
     {

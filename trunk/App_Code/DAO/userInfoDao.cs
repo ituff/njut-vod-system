@@ -158,12 +158,13 @@ public class userInfoDao
 
     public bool updateUser(userinfo user)
     {
-        string query = "UPDATE userinfo SET UserName=?UserName,Email=?Email,Type=?Type WHERE UserID=?UserID;";
+        string query = "UPDATE userinfo SET UserName=?UserName,Email=?Email,Type=?Type,Password=?Password WHERE UserID=?UserID;";
         MySqlConnection myConnection = new MySqlConnection(Conn());
         MySqlCommand myCommand = new MySqlCommand(query, myConnection);
         myCommand.Parameters.Add(new MySqlParameter("?UserName", user.UserName));
         myCommand.Parameters.Add(new MySqlParameter("?Email", user.Email));
         myCommand.Parameters.Add(new MySqlParameter("?Type", user.Type));
+        myCommand.Parameters.Add(new MySqlParameter("?Password", user.Password));
         myCommand.Parameters.Add(new MySqlParameter("?UserID", user.UserID));
         try
         {
